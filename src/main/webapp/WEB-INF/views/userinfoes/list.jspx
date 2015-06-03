@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_webessay_model_Userinfo" items="${userinfoes}" z="acY/s5uTEQDgqr9VEOnYCjjGzZs=">
+        <table:table data="${userinfoes}" id="l_com_webessay_model_Userinfo" path="/userinfoes" z="EZfMYnzZ5XCoF2ItmwA/5Bfw2Gs=">
+            <table:column id="c_com_webessay_model_Userinfo_city" property="city" z="axZcugTkT8dYZGTqhI0y76Axu1o="/>
+            <table:column id="c_com_webessay_model_Userinfo_contactId" property="contactId" z="O4Q1vX6e4dFBujGOhFIzwW4+1tA="/>
+            <table:column id="c_com_webessay_model_Userinfo_contactType" property="contactType" z="RwdJmB9gAMaEMMvA7lxxyvB3N7s="/>
+            <table:column id="c_com_webessay_model_Userinfo_country" property="country" z="AtXjkDhxoYFIPkGrI7TEl860ZL4="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_webessay_model_Messages" items="${messageses}" z="dDGpVY9M1gRW1QWv6ekXFFwraFE=">
+        <table:table data="${messageses}" id="l_com_webessay_model_Messages" path="/messageses" z="naHQ49qQ7BEBj3GROGodw+nFQqU=">
+            <table:column id="c_com_webessay_model_Messages_text" property="text" z="x0F3vZ3q3zQ7s9IBDWNJ4SuqQzQ="/>
+            <table:column calendar="true" dateTimePattern="${messages_createdate_date_format}" id="c_com_webessay_model_Messages_createDate" property="createDate" z="hRM+7FIN5G40e7T8idJbCaT1FcM="/>
+            <table:column id="c_com_webessay_model_Messages_hasRead" property="hasRead" z="x3XCNya56GSeNVRVtERsfKjYj+Q="/>
+            <table:column id="c_com_webessay_model_Messages_hasAdudit" property="hasAdudit" z="Ow2diVBiXNQAIIXsCY3sUFVxDIw="/>
+            <table:column id="c_com_webessay_model_Messages_sendToUser" property="sendToUser" z="U10A3Ow7XtuixoOO7ogJ7AZMefg="/>
+            <table:column id="c_com_webessay_model_Messages_auditText" property="auditText" z="2or9llFXIWjRsPYQgxDHlU1PgUQ="/>
+        </table:table>
+    </page:list>
+</div>

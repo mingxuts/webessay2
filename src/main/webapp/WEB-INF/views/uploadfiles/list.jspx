@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_webessay_model_Uploadfile" items="${uploadfiles}" z="u8FQtua7Q3r9lrwsXmltwIUw620=">
+        <table:table data="${uploadfiles}" id="l_com_webessay_model_Uploadfile" path="/uploadfiles" z="Tzi6k97E1C0cVQrJh7Hxf9Tq0tw=">
+            <table:column id="c_com_webessay_model_Uploadfile_fileContentType" property="fileContentType" z="Ol1K1LzjOFHTnmEIAMtS9PpkYoM="/>
+            <table:column id="c_com_webessay_model_Uploadfile_fileName" property="fileName" z="xI3BsdgMNv4dXEVUT4ntbjIeH04="/>
+            <table:column id="c_com_webessay_model_Uploadfile_fileSize" property="fileSize" z="kbW1YQN5c8x8WhMNsJ1Dpujy+e4="/>
+            <table:column id="c_com_webessay_model_Uploadfile_file" property="file" z="gt4pLAOf7lovMF83CVkO49yoyKg="/>
+        </table:table>
+    </page:list>
+</div>

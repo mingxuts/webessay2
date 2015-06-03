@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_webessay_model_Jobs" items="${jobses}" z="1B09bc+10kDtkhIQeIB61yGs8gg=">
+        <table:table data="${jobses}" id="l_com_webessay_model_Jobs" path="/jobses" z="sjpQozYET+s0il5JVHfWn+XAF8Y=">
+            <table:column id="c_com_webessay_model_Jobs_writerId" property="writerId" z="eGhTBpTs5TPBps7MU6BsivpEJrk="/>
+            <table:column id="c_com_webessay_model_Jobs_customerId" property="customerId" z="Q8tuLDT5Vi1UyLQZMck+830GWpI="/>
+            <table:column id="c_com_webessay_model_Jobs_allowAllSubject" property="allowAllSubject" z="RHaJ8wZdVpdvnsucu15gIKXcXj4="/>
+            <table:column id="c_com_webessay_model_Jobs_amountDue" property="amountDue" z="160oPFg+ZLEIwmG6+p7FRm20Lnk="/>
+            <table:column id="c_com_webessay_model_Jobs_chargeWriter" property="chargeWriter" z="ktZeA8mDSaJXrRgeXMzc3Cj01eo="/>
+            <table:column id="c_com_webessay_model_Jobs_commission" property="commission" z="GEqT0FSeruz2uRVhrQqMy3dlJFU="/>
+        </table:table>
+    </page:list>
+</div>

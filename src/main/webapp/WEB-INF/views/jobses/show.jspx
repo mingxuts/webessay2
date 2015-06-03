@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_webessay_model_Jobs" object="${jobs}" path="/jobses" z="h9NvUDBcRZ9eTIqvFOfxGGdcZ+g=">
+        <field:display field="writerId" id="s_com_webessay_model_Jobs_writerId" object="${jobs}" z="QsOy+S1gX+NIJF7FfaiVmRU4vUM="/>
+        <field:display field="customerId" id="s_com_webessay_model_Jobs_customerId" object="${jobs}" z="sKAvfZg8SLIY2zUF1sfRZoyxsAQ="/>
+        <field:display field="allowAllSubject" id="s_com_webessay_model_Jobs_allowAllSubject" object="${jobs}" z="nfzawfe1nkf5lpE872qB03kxFGY="/>
+        <field:display field="amountDue" id="s_com_webessay_model_Jobs_amountDue" object="${jobs}" z="I1JfvTwJGlX3PdewxlxV+uf0fVs="/>
+        <field:display field="chargeWriter" id="s_com_webessay_model_Jobs_chargeWriter" object="${jobs}" z="g4tuWVBb2vSpTsGt0kCUGO2aZaw="/>
+        <field:display field="commission" id="s_com_webessay_model_Jobs_commission" object="${jobs}" z="XCuAWO7i15AxdSCXEZYo3Rm95A4="/>
+        <field:display field="coupon" id="s_com_webessay_model_Jobs_coupon" object="${jobs}" z="Ygke3tCbyIFgER0kUv/Z24pFY48="/>
+        <field:display field="courseLevel" id="s_com_webessay_model_Jobs_courseLevel" object="${jobs}" z="4lqAliPv8xxvUjXsvZZwSaQoHyY="/>
+        <field:display calendar="true" dateTimePattern="${jobs_createdate_date_format}" field="createDate" id="s_com_webessay_model_Jobs_createDate" object="${jobs}" z="HDpEoVnUsfdE/LYypKnIZOdwAGY="/>
+        <field:display calendar="true" dateTimePattern="${jobs_deadline_date_format}" field="deadLine" id="s_com_webessay_model_Jobs_deadLine" object="${jobs}" z="OGoID37/y/2UhS3TmubQE0tQNCk="/>
+        <field:display field="feedBack" id="s_com_webessay_model_Jobs_feedBack" object="${jobs}" z="vzN8PENizdPdtF6w9AYmaLnz1PQ="/>
+        <field:display field="feedBackDescription" id="s_com_webessay_model_Jobs_feedBackDescription" object="${jobs}" z="qY9jmRP1QNby1Id2cHU1vr14OfI="/>
+        <field:display field="presentFormat" id="s_com_webessay_model_Jobs_presentFormat" object="${jobs}" z="MjG1O/4KbsULfFyjLkP+v8rGavQ="/>
+        <field:display field="fullPrice" id="s_com_webessay_model_Jobs_fullPrice" object="${jobs}" z="k6wqU8PrfTp+mJakhZUyMas8KxU="/>
+        <field:display field="includeFigure" id="s_com_webessay_model_Jobs_includeFigure" object="${jobs}" z="jshYXRcQDApap4Uuq3MSg2es0Co="/>
+        <field:display field="note" id="s_com_webessay_model_Jobs_note" object="${jobs}" z="pGl1XOYD/qEtn7ROG3pbJoQg6/U="/>
+        <field:display field="orderId" id="s_com_webessay_model_Jobs_orderId" object="${jobs}" z="w3Ap51aSdEJTEOUudSHYPTmz1DM="/>
+        <field:display field="reduced" id="s_com_webessay_model_Jobs_reduced" object="${jobs}" z="1e8gFQyjflnZlyVX/zBeCd5rxoY="/>
+        <field:display field="referencing" id="s_com_webessay_model_Jobs_referencing" object="${jobs}" z="ZeuX8yiZtnojETyQKrS5PkxJwI8="/>
+        <field:display field="sourcesCount" id="s_com_webessay_model_Jobs_sourcesCount" object="${jobs}" z="ko/nFYeIHirwhp9q/Y/2r/3X4J0="/>
+        <field:display calendar="true" dateTimePattern="${jobs_startdate_date_format}" field="startDate" id="s_com_webessay_model_Jobs_startDate" object="${jobs}" z="vnflIVSm3Qs+wkTPWSfgtWknRoM="/>
+        <field:display field="status" id="s_com_webessay_model_Jobs_status" object="${jobs}" z="0X2hrrVbyw+7WZ0e8AdiLYfR73U="/>
+        <field:display field="subjectId" id="s_com_webessay_model_Jobs_subjectId" object="${jobs}" z="wNKOXc5Xk1sRATp63veLVRSJeVk="/>
+        <field:display field="wordCount" id="s_com_webessay_model_Jobs_wordCount" object="${jobs}" z="mW8dKDnVaDceqTEZHNrEAudDQPo="/>
+        <field:display field="fileId" id="s_com_webessay_model_Jobs_fileId" object="${jobs}" z="V5Md63dHjwDoyxDO+UgFmutDNdo="/>
+    </page:show>
+</div>

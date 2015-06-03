@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_webessay_model_Orders" modelAttribute="orders" path="/orderses" versionField="none" z="VDmu4SaLUCtXCFDqyoNNXqFV7bU=">
+        <field:input field="coupon" id="c_com_webessay_model_Orders_coupon" z="7zbXPsVeRkGmKu7XO9LeqnII+10="/>
+        <field:input field="courseLevel" id="c_com_webessay_model_Orders_courseLevel" z="fLMKFE7bYPE2Bu2kteCilDKkP00="/>
+        <field:datetime dateTimePattern="${orders_createdate_date_format}" field="createDate" id="c_com_webessay_model_Orders_createDate" z="JxFEYfxkTk6jjzdYvkmm+nfRsX0="/>
+        <field:input field="customerId" id="c_com_webessay_model_Orders_customerId" validationMessageCode="field_invalid_integer" z="FfvLfoc0m/Iyu7QVR0ugCWEkDaE="/>
+        <field:datetime dateTimePattern="${orders_deadline_date_format}" field="deadLine" id="c_com_webessay_model_Orders_deadLine" required="true" z="AAbgcKFPyYCtcl3aUk41WlZi6K4="/>
+        <field:input field="presentFormat" id="c_com_webessay_model_Orders_presentFormat" z="UaF6NTMXlih95yo38kONWBI3Ous="/>
+        <field:input field="includeFigure" id="c_com_webessay_model_Orders_includeFigure" z="zBkbSkVJ2/0QFa02C9f1N7JYV9A="/>
+        <field:input field="note" id="c_com_webessay_model_Orders_note" z="I5/gF29K2I3le5jkIBFqPC3xE1s="/>
+        <field:input field="orderStatus" id="c_com_webessay_model_Orders_orderStatus" z="8au+aGUPfakUIjab/g6c3jUs9Iw="/>
+        <field:input field="referencing" id="c_com_webessay_model_Orders_referencing" z="UyK7Qs9wzoPyVOCojlyQdWyqU5Y="/>
+        <field:input field="sourcesCount" id="c_com_webessay_model_Orders_sourcesCount" validationMessageCode="field_invalid_integer" z="fuMLMJ2sbz+iDbM/dwVDGgMleVc="/>
+        <field:datetime dateTimePattern="${orders_startdate_date_format}" field="startDate" id="c_com_webessay_model_Orders_startDate" required="true" z="6KyG16zWrR+kHz5KariSwZx6+2Q="/>
+        <field:input field="wordCount" id="c_com_webessay_model_Orders_wordCount" required="true" validationMessageCode="field_invalid_integer" z="LStJceqdPcf1tyMOqOOA1L4qSgg="/>
+        <field:input field="subjectId" id="c_com_webessay_model_Orders_subjectId" required="true" validationMessageCode="field_invalid_integer" z="fRZS/txXSjQsy5KXymqiPYrziqs="/>
+        <field:input field="taskId" id="c_com_webessay_model_Orders_taskId" validationMessageCode="field_invalid_integer" z="7LbWSI6MbccMs+kKunr6slZl5XE="/>
+        <field:input field="fileId" id="c_com_webessay_model_Orders_fileId" validationMessageCode="field_invalid_integer" z="zXuxpBW54SueJWBH+32Ljouybks="/>
+    </form:update>
+</div>

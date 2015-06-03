@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_webessay_model_Userinfo" modelAttribute="userinfo" path="/userinfoes" versionField="none" z="c1I9rwGUziqTRkCUMU0e2FeWo6U=">
+        <field:simple field="jobss" id="c_com_webessay_model_Userinfo_jobss" messageCode="entity_reference_not_managed" messageCodeAttribute="Jobs" z="SIxeBEPOUVBkyRgdppn1prQjQJA="/>
+        <field:simple field="jobss1" id="c_com_webessay_model_Userinfo_jobss1" messageCode="entity_reference_not_managed" messageCodeAttribute="Jobs" z="O9hKinFyXny8aBMZqMNHe3kgLp4="/>
+        <field:input field="city" id="c_com_webessay_model_Userinfo_city" z="nUebMiOqWYWH0sy6C6Ate6581vo="/>
+        <field:input field="contactId" id="c_com_webessay_model_Userinfo_contactId" z="nTKvZJwaKciNxFvqlqha4F9kd94="/>
+        <field:input field="contactType" id="c_com_webessay_model_Userinfo_contactType" z="z3y/Y7TbWThpATRTQSU/RDqUT2I="/>
+        <field:input field="country" id="c_com_webessay_model_Userinfo_country" z="8e1RWjG4y3UfG8Ep4CadSMvhDYY="/>
+        <field:input field="createBy" id="c_com_webessay_model_Userinfo_createBy" validationMessageCode="field_invalid_integer" z="FdgtMtVosl3iaofK4EleKv134tA="/>
+        <field:datetime dateTimePattern="${userinfo_createdate_date_format}" field="createDate" id="c_com_webessay_model_Userinfo_createDate" z="DDXrS6iRE7taBuKy4xKu96Bai44="/>
+        <field:input field="email" id="c_com_webessay_model_Userinfo_email" required="true" validationMessageCode="field_invalid_email" z="/YM/fyIj/t52aiOtlvAmtLYpcko="/>
+        <field:input field="emailCode" id="c_com_webessay_model_Userinfo_emailCode" validationMessageCode="field_invalid_email" z="v7UHPddV/sApyK51d6oO95OyZUs="/>
+        <field:input field="groupName" id="c_com_webessay_model_Userinfo_groupName" z="FuzN7LfMPWjE79hUZeiz7/vo9P0="/>
+        <field:checkbox field="hasVerified" id="c_com_webessay_model_Userinfo_hasVerified" z="71DGjGyqca9fZKINLUb/tXPSXAs="/>
+        <field:input field="loginPassword" id="c_com_webessay_model_Userinfo_loginPassword" required="true" z="fi4I2zxnFhIl1ov/03ldmPCNvGQ="/>
+        <field:checkbox field="passwordNonExpired" id="c_com_webessay_model_Userinfo_passwordNonExpired" z="MLhbJG74P+FBVQYvb4jW8Jha7kQ="/>
+        <field:input field="lastName" id="c_com_webessay_model_Userinfo_lastName" required="true" z="lKMnFsU+87VigdZKwnplUpsY1wc="/>
+        <field:input field="firstName" id="c_com_webessay_model_Userinfo_firstName" required="true" z="IHzQ8kK2k74eUCljMZ1Dk1MNF1w="/>
+        <field:input field="special" id="c_com_webessay_model_Userinfo_special" z="aPfwrJ8QI/f/6iDtb1rsi2k9mpo="/>
+    </form:update>
+</div>

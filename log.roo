@@ -1,0 +1,12 @@
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2015-06-03 19:33:28
+project --topLevelPackage com.webessay --projectName webessay-v2 --java 7 --packaging WAR
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2015-06-03 19:33:38
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2015-06-03 19:36:16
+hint
+jpa setup --provider HIBERNATE --database MYSQL 
+database reverse engineer --schema webessay --repository true --package ~.model
+web mvc setup
+web mvc all --package ~.controller
+security setup
+backup
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2015-06-03 19:45:02

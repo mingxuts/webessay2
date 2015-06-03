@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_webessay_model_Messages" modelAttribute="messages" path="/messageses" versionField="none" z="+WI1kZqdwJ+dMsqjwapOcDcjJUU=">
+        <field:input field="text" id="c_com_webessay_model_Messages_text" z="OpoeXfgp4FWW/PBCnTNQlI4i5zw="/>
+        <field:datetime dateTimePattern="${messages_createdate_date_format}" field="createDate" id="c_com_webessay_model_Messages_createDate" z="4N83wBpMPlSo6/1aeK1Fp0pucXg="/>
+        <field:checkbox field="hasRead" id="c_com_webessay_model_Messages_hasRead" z="J7p8QyVf7eOkfnegIzdY2Y4hat0="/>
+        <field:checkbox field="hasAdudit" id="c_com_webessay_model_Messages_hasAdudit" z="OiMYANuXBI9PLsSMeyCkNA/x5Bg="/>
+        <field:input field="sendToUser" id="c_com_webessay_model_Messages_sendToUser" validationMessageCode="field_invalid_integer" z="Uw8yikb+3JwvVpRoeRa8xnGqSMA="/>
+        <field:input field="auditText" id="c_com_webessay_model_Messages_auditText" z="THQEBt9+wXcvS8MUYjTShmWFNDA="/>
+        <field:input field="fileId" id="c_com_webessay_model_Messages_fileId" validationMessageCode="field_invalid_integer" z="LUvAluQT021WK+Lfjd9k5zTteAY="/>
+    </form:update>
+</div>

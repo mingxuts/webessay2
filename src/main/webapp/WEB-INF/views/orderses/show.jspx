@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_webessay_model_Orders" object="${orders}" path="/orderses" z="qDU9GIVajNEphqgkW+Y1jnZyvCU=">
+        <field:display field="coupon" id="s_com_webessay_model_Orders_coupon" object="${orders}" z="w/NuVK2Wff+xVchmWsfCeWtZI0g="/>
+        <field:display field="courseLevel" id="s_com_webessay_model_Orders_courseLevel" object="${orders}" z="bVNqVQlv17fMs0H2s1LUiUItqrw="/>
+        <field:display calendar="true" dateTimePattern="${orders_createdate_date_format}" field="createDate" id="s_com_webessay_model_Orders_createDate" object="${orders}" z="ZbNjw9fNvkAOV+jSrwPlZzumGQk="/>
+        <field:display field="customerId" id="s_com_webessay_model_Orders_customerId" object="${orders}" z="rQZT6wLhjuMzvqgZOoNl2hcYVQA="/>
+        <field:display calendar="true" dateTimePattern="${orders_deadline_date_format}" field="deadLine" id="s_com_webessay_model_Orders_deadLine" object="${orders}" z="SPkJpvw8liZ6r0II03Jy7VOWSEE="/>
+        <field:display field="presentFormat" id="s_com_webessay_model_Orders_presentFormat" object="${orders}" z="bU547vF4U/x3vpX2p1UT9UmaTgE="/>
+        <field:display field="includeFigure" id="s_com_webessay_model_Orders_includeFigure" object="${orders}" z="uUbb5V4yLHbGsJkWsjheiZnxgnc="/>
+        <field:display field="note" id="s_com_webessay_model_Orders_note" object="${orders}" z="HnWqBvouktc4smLujJJ0VcwMtac="/>
+        <field:display field="orderStatus" id="s_com_webessay_model_Orders_orderStatus" object="${orders}" z="hD6iEQKThGpztqSdz+aZw587RDo="/>
+        <field:display field="referencing" id="s_com_webessay_model_Orders_referencing" object="${orders}" z="mWtC0QeJKxauECQ6oFIpG1BzIK0="/>
+        <field:display field="sourcesCount" id="s_com_webessay_model_Orders_sourcesCount" object="${orders}" z="HZbU3o9rhvORUWqHrDRx6IJpdmU="/>
+        <field:display calendar="true" dateTimePattern="${orders_startdate_date_format}" field="startDate" id="s_com_webessay_model_Orders_startDate" object="${orders}" z="jiLQ0Qr/lWxd5JCX/n/S/BY75fI="/>
+        <field:display field="wordCount" id="s_com_webessay_model_Orders_wordCount" object="${orders}" z="wQo0p4vgpzDHbPX3x5WAAAjcYTk="/>
+        <field:display field="subjectId" id="s_com_webessay_model_Orders_subjectId" object="${orders}" z="FglRb7Hu6d3MbLgDYXkce6qsuTc="/>
+        <field:display field="taskId" id="s_com_webessay_model_Orders_taskId" object="${orders}" z="OdorJxkM05fJ5PJ9fj64kaiiT3o="/>
+        <field:display field="fileId" id="s_com_webessay_model_Orders_fileId" object="${orders}" z="XB0Ggb5nOGgUzHrmHG9aQHLamZI="/>
+    </page:show>
+</div>

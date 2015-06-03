@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="uploadfiles/list">
+        <put-attribute name="body" value="/WEB-INF/views/uploadfiles/list.jspx"/>
+    </definition>
+<definition extends="default" name="uploadfiles/show">
+        <put-attribute name="body" value="/WEB-INF/views/uploadfiles/show.jspx"/>
+    </definition>
+<definition extends="default" name="uploadfiles/create">
+        <put-attribute name="body" value="/WEB-INF/views/uploadfiles/create.jspx"/>
+    </definition>
+<definition extends="default" name="uploadfiles/update">
+        <put-attribute name="body" value="/WEB-INF/views/uploadfiles/update.jspx"/>
+    </definition>
+</tiles-definitions>

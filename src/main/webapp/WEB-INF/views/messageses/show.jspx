@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_webessay_model_Messages" object="${messages}" path="/messageses" z="NYYpytwrxIZINupTE5H5VDnICdg=">
+        <field:display field="text" id="s_com_webessay_model_Messages_text" object="${messages}" z="km5y0fDyma3P5SXtU1T3FF53j4s="/>
+        <field:display calendar="true" dateTimePattern="${messages_createdate_date_format}" field="createDate" id="s_com_webessay_model_Messages_createDate" object="${messages}" z="ry7CVwU2hVYpQf3mH5WLRp6LP6M="/>
+        <field:display field="hasRead" id="s_com_webessay_model_Messages_hasRead" object="${messages}" z="6K6VTl9hKaGly4oA3m1NbpVCTts="/>
+        <field:display field="hasAdudit" id="s_com_webessay_model_Messages_hasAdudit" object="${messages}" z="mh0eDkfToYVjX2N0EcLTnM5/0Us="/>
+        <field:display field="sendToUser" id="s_com_webessay_model_Messages_sendToUser" object="${messages}" z="ey9+BErhTQbmUyXzxGv75yRkS4U="/>
+        <field:display field="auditText" id="s_com_webessay_model_Messages_auditText" object="${messages}" z="FDqz/eZeXsQmM4WfRAg2D7PBKrg="/>
+        <field:display field="fileId" id="s_com_webessay_model_Messages_fileId" object="${messages}" z="06IHSuLGYNeeYD/9Jq2ZGsA82Pc="/>
+    </page:show>
+</div>

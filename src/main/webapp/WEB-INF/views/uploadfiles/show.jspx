@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_webessay_model_Uploadfile" object="${uploadfile}" path="/uploadfiles" z="T5kiY8HouIzt88R1K3+VP9DCv0A=">
+        <field:display field="fileContentType" id="s_com_webessay_model_Uploadfile_fileContentType" object="${uploadfile}" z="cZzmfLDwWnAPi+KzxRJ1QYbnL74="/>
+        <field:display field="fileName" id="s_com_webessay_model_Uploadfile_fileName" object="${uploadfile}" z="ucUgOyHswjsKoPe4+ej2VAruIoU="/>
+        <field:display field="fileSize" id="s_com_webessay_model_Uploadfile_fileSize" object="${uploadfile}" z="N7x2tRf3BRAWd3Xry4wKkapsDPU="/>
+        <field:display field="file" id="s_com_webessay_model_Uploadfile_file" object="${uploadfile}" z="/2S+F0nqconHjIkY46Rrr2zc9AU="/>
+    </page:show>
+</div>
