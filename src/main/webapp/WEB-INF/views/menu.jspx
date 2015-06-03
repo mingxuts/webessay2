@@ -31,5 +31,8 @@
             <menu:item id="i_jobs_new" messageCode="global_menu_new" url="/jobses?form" z="FttemmIQQNDicM9jL65F0oZNsDY="/>
             <menu:item id="i_jobs_list" messageCode="global_menu_list" url="/jobses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="WOwj5rlZOI/hfmn1/EF6N0FuwjQ="/>
         </menu:category>
+        <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
+            <menu:item id="i_controller__testuploadindex_id" messageCode="global_generic" url="/testupload/index" z="95e/vacQ1mvjW96UtSsQAHUGNII="/>
+        </menu:category>
     </menu:menu>
 </div>
