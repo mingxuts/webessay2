@@ -10,15 +10,16 @@ xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0" xmlns:field="urn:jsp
       Welcome, you can send us an order by filling in this form
     </h3>
     <form:create id="customed-new-order-form" path="./index" modelAttribute="orders" label="Pending Order">
+    	<field:input field="subjectId" id="c_com_webessay_model_orders_subjectid" required="true" />
     	<field:datetime label="Start Date" dateTimePattern="${order_startdate_date_format}" field="startDate" required="true" id="customed-new-order-form-start-date" />
     	<field:datetime label="Deadline" required="true" dateTimePattern="${order_deadline_date_format}" field="deadLine" id="customed-new-order-form-dead-line"/>
-    	<field:select label="Word Count" field="wordCount" id="c_com_myessay_model_Orders_wordCount" itemLabel="value" itemValue="id" items="${wordcounts}" path="/wordcount" required="true"/>
-    	<field:select label="Course Level" field="courseLevel" id="c_com_myessay_model_Orders_courseLevel" itemLabel="level" itemValue="level" items="${courselevels}" path="/courselevels" />
-    	<field:select label="Format" field="presentFormat" id="c_com_myessay_model_Orders_presentFormat" itemLabel="format" itemValue="format" items="${presentationformat}" path="/presentationformat"/> 
-    	<field:select label="Referencing" field="referencing" id="c_com_myessay_model_Orders_referencing" itemLabel="format" itemValue="format" items="${referencingformat}" path="/referencingformat"/>
-    	<field:select label="Source Count" field="sourcesCount" id="c_com_myessay_model_Orders_sourcesCount" itemLabel="value" itemValue="id" items="${sourcescount}" path="/sourcescount"/>
-    	<field:select label="Include Figure" field="includeFigure" id="c_com_myessay_model_Orders_includeFigure" itemLabel="include" itemValue="include" items="${includegraph}" path="/includegraph"/>
-    	<input type="hidden" name="CustomerId" id="c_com_myessay_model_Orders_customerId" value="${orders.customerId}" />	
+    	<field:select label="Word Count" field="wordCount" id="c_com_webessay_model_Orders_wordCount" itemLabel="value" itemValue="id" items="${wordcounts}" path="/wordcount" required="true"/>
+    	<field:select label="Course Level" field="courseLevel" id="c_com_webessay_model_Orders_courseLevel" itemLabel="level" itemValue="level" items="${courselevels}" path="/courselevels" />
+    	<field:select label="Format" field="presentFormat" id="c_com_webessay_model_Orders_presentFormat" itemLabel="format" itemValue="format" items="${presentationformat}" path="/presentationformat"/> 
+    	<field:select label="Referencing" field="referencing" id="c_com_webessay_model_Orders_referencing" itemLabel="format" itemValue="format" items="${referencingformat}" path="/referencingformat"/>
+    	<field:select label="Source Count" field="sourcesCount" id="c_com_webessay_model_Orders_sourcesCount" itemLabel="value" itemValue="id" items="${sourcescount}" path="/sourcescount"/>
+    	<field:select label="Include Figure" field="includeFigure" id="c_com_webessay_model_Orders_includeFigure" itemLabel="include" itemValue="include" items="${includegraph}" path="/includegraph"/>
+    	<input type="hidden" name="CustomerId" id="c_com_webessay_model_Orders_customerId" value="${orders.customerId}" />	
     </form:create>
   </util:panel>
 </div>

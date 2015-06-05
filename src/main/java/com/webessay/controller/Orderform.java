@@ -4,6 +4,7 @@ import java.util.GregorianCalendar;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +12,11 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 
 import com.webessay.model.Orders;
 import com.webessay.model.OrdersRepository;
@@ -46,15 +47,15 @@ public class Orderform {
     }
     
     @RequestMapping(method = RequestMethod.POST)
-    public String postForm(@ModelAttribute("order") Orders orders, Model uiModel){
+    public String postForm(@Valid Orders orders, BindingResult bindingResult,  Model uiModel){
     	orders.setCreateDate(new GregorianCalendar());
     	repo.save(orders);    	
     	return page_endpoint;
     }
     
     private void addDatetimeFormatPatterns(Model uiModel){
-        uiModel.addAttribute("order_startdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("order_deadline_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));    	
+        uiModel.addAttribute("order_startdate_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("order_deadline_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));    	
     }
     private void establishData(Model uiModel){
         uiModel.addAttribute("wordcounts", com.webessay.customtypes.Wordcount.getAllWordCountValues());
