@@ -19,6 +19,5 @@
         <field:input field="subjectId" id="c_com_webessay_model_Orders_subjectId" required="true" validationMessageCode="field_invalid_integer" z="fRZS/txXSjQsy5KXymqiPYrziqs="/>
         <field:input field="taskId" id="c_com_webessay_model_Orders_taskId" validationMessageCode="field_invalid_integer" z="7LbWSI6MbccMs+kKunr6slZl5XE="/>
         <field:input field="fileId" id="c_com_webessay_model_Orders_fileId" validationMessageCode="field_invalid_integer" z="zXuxpBW54SueJWBH+32Ljouybks="/>
-        <field:textarea field="tempfile" id="c_com_webessay_model_Orders_tempfile" z="user-managed" render="false"/>
     </form:update>
 </div>

@@ -11,20 +11,4 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaEntity(versionField = "", table = "orders")
 @RooDbManaged(automaticallyDelete = true)
 public class Orders {
-
-    @Transient
-    @Size(max = 255)
-    private String tempfile;
-
-    public String getTempfile() {
-        return tempfile;
-    }
-
-    public void setTempfile(String tempfile) {
-        this.tempfile = tempfile;
-    }
-
-    public Orders() {
-        tempfile = null;
-    }
 }

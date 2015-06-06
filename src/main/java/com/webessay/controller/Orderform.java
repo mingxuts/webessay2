@@ -1,4 +1,5 @@
 package com.webessay.controller;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.security.Principal;
 import java.util.GregorianCalendar;
@@ -26,6 +27,8 @@ import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 
 import com.webessay.model.Orders;
 import com.webessay.model.OrdersRepository;
+import com.webessay.model.Uploadfile;
+import com.webessay.model.UploadfileRepository;
 import com.webessay.user.UserUtils;
 
 @RequestMapping("/orderform/**")
@@ -34,6 +37,9 @@ public class Orderform {
 	
 	@Autowired
 	private OrdersRepository repo;
+	
+	@Autowired
+	private UploadfileRepository uploadrepo;
 	
 	private String page_endpoint = "orderform/index";	
 
@@ -55,7 +61,14 @@ public class Orderform {
     @RequestMapping(method = RequestMethod.POST)
     public String postForm(@Valid Orders orders, BindingResult bindingResult,  Model uiModel, @RequestParam("tempfile") MultipartFile multipartFile){
     	orders.setCreateDate(new GregorianCalendar());
-    	repo.save(orders);    	
+    	try {
+			upload(orders, multipartFile);
+	    	repo.save(orders);    
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    uiModel.asMap().clear();
     	return page_endpoint;
     }
     
@@ -79,5 +92,14 @@ public class Orderform {
 	            new ByteArrayMultipartFileEditor());
 	} 
 	
+	private void upload(Orders orders, MultipartFile file) throws Exception{
+    	Uploadfile entity = new Uploadfile();
+    	entity.setFileContentType(file.getContentType());
+    	entity.setFileName(file.getOriginalFilename());
+    	entity.setFileSize(file.getSize());
+    	entity.setFile(file.getBytes());
+    	uploadrepo.save(entity);
+    	orders.setFileId(entity.getId());
+	}
 
 }

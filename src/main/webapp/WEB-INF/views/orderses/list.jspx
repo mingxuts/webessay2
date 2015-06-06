@@ -9,7 +9,7 @@
             <table:column calendar="true" dateTimePattern="${orders_createdate_date_format}" id="c_com_webessay_model_Orders_createDate" property="createDate" z="Cx6BeH/31RUwFPT5lEQ9XURvZAU="/>
             <table:column id="c_com_webessay_model_Orders_customerId" property="customerId" z="B2dRbiTvO431TFXu0/E4nFxofYA="/>
             <table:column calendar="true" dateTimePattern="${orders_deadline_date_format}" id="c_com_webessay_model_Orders_deadLine" property="deadLine" z="+79lGrekuCCsE+h8puLQHyU1Wcc="/>
-            <table:column id="c_com_webessay_model_Orders_tempfile" property="tempfile" z="JQ//0mrn0xq90HmZBmnIta12FOY="/>
+            <table:column id="c_com_webessay_model_Orders_presentFormat" property="presentFormat" z="nwNuUYpq8dpnVh0z9msJDUnc4kA="/>
         </table:table>
     </page:list>
 </div>
