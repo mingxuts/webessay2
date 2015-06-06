@@ -34,6 +34,7 @@
         <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
             <menu:item id="i_controller__testuploadindex_id" messageCode="global_generic" url="/testupload/index" z="95e/vacQ1mvjW96UtSsQAHUGNII="/>
             <menu:item id="i_controller__orderformindex_id" messageCode="global_generic" url="/orderform/index" z="A2QyONV4sW0qGk6iMlvTXbbsRfA="/>
+            <menu:item id="i_controller__jobformindex_id" messageCode="global_generic" url="/jobform/index" z="ojf3xzMOjkdU88eix85Jmx1xSBw="/>
         </menu:category>
     </menu:menu>
 </div>

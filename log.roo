@@ -17,3 +17,6 @@ web mvc controller --class ~.controller.testupload
 web mvc controller --class Orderform
 // Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2015-06-06 21:12:31
 // Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2015-06-06 21:12:49
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2015-06-06 21:25:33
+web mvc controller --class ~.controller.Jobform
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2015-06-06 21:26:10
