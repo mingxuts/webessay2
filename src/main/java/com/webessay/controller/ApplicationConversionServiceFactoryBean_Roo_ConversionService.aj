@@ -101,7 +101,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Orders, String> ApplicationConversionServiceFactoryBean.getOrdersToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.webessay.model.Orders, java.lang.String>() {
             public String convert(Orders orders) {
-                return new StringBuilder().append(orders.getCoupon()).append(' ').append(orders.getCourseLevel()).append(' ').append(orders.getCreateDate()).append(' ').append(orders.getCustomerId()).toString();
+                return new StringBuilder().append(orders.getTempfile()).append(' ').append(orders.getCoupon()).append(' ').append(orders.getCourseLevel()).append(' ').append(orders.getCreateDate()).toString();
             }
         };
     }

@@ -9,7 +9,7 @@ xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0" xmlns:field="urn:jsp
     <h3>
       Welcome, you can send us an order by filling in this form
     </h3>
-    <form:create id="customed-new-order-form" path="./index" modelAttribute="orders" label="Pending Order">
+    <form:create id="customed-new-order-form" path="./index" modelAttribute="orders" label="Pending Order" multipart="true">
     	<field:input field="subjectId" id="c_com_webessay_model_orders_subjectid" required="true" />
     	<field:datetime label="Start Date" dateTimePattern="${order_startdate_date_format}" field="startDate" required="true" id="customed-new-order-form-start-date" />
     	<field:datetime label="Deadline" required="true" dateTimePattern="${order_deadline_date_format}" field="deadLine" id="customed-new-order-form-dead-line"/>
@@ -20,6 +20,12 @@ xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0" xmlns:field="urn:jsp
     	<field:select label="Source Count" field="sourcesCount" id="c_com_webessay_model_Orders_sourcesCount" itemLabel="value" itemValue="id" items="${sourcescount}" path="/sourcescount"/>
     	<field:select label="Include Figure" field="includeFigure" id="c_com_webessay_model_Orders_includeFigure" itemLabel="include" itemValue="include" items="${includegraph}" path="/includegraph"/>
     	<input type="hidden" name="CustomerId" id="c_com_webessay_model_Orders_customerId" value="${orders.customerId}" />	
+    	<div id="upload">
+    		<label for="tempfile">Select file to attach to your order:</label>
+    		<input type="file" name="tempfile" required = "false" />
+    	</div>
+    	<br />
+    	<br />
     </form:create>
   </util:panel>
 </div>

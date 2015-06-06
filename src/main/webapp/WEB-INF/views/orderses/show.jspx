@@ -19,5 +19,6 @@
         <field:display field="subjectId" id="s_com_webessay_model_Orders_subjectId" object="${orders}" z="FglRb7Hu6d3MbLgDYXkce6qsuTc="/>
         <field:display field="taskId" id="s_com_webessay_model_Orders_taskId" object="${orders}" z="OdorJxkM05fJ5PJ9fj64kaiiT3o="/>
         <field:display field="fileId" id="s_com_webessay_model_Orders_fileId" object="${orders}" z="XB0Ggb5nOGgUzHrmHG9aQHLamZI="/>
+        <field:display field="tempfile" id="s_com_webessay_model_Orders_tempfile" object="${orders}" z="Nl34ZY5UiGu/mVtUaMCuC9YPmKk="/>
     </page:show>
 </div>

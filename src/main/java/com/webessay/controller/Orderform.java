@@ -1,7 +1,9 @@
 package com.webessay.controller;
+import java.lang.reflect.Field;
 import java.security.Principal;
 import java.util.GregorianCalendar;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -13,10 +15,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 
 import com.webessay.model.Orders;
 import com.webessay.model.OrdersRepository;
@@ -47,7 +53,7 @@ public class Orderform {
     }
     
     @RequestMapping(method = RequestMethod.POST)
-    public String postForm(@Valid Orders orders, BindingResult bindingResult,  Model uiModel){
+    public String postForm(@Valid Orders orders, BindingResult bindingResult,  Model uiModel, @RequestParam("tempfile") MultipartFile multipartFile){
     	orders.setCreateDate(new GregorianCalendar());
     	repo.save(orders);    	
     	return page_endpoint;
@@ -65,4 +71,13 @@ public class Orderform {
         uiModel.addAttribute("referencingformat", com.webessay.customtypes.Referencingformat.getAllReferencingformat());
         uiModel.addAttribute("includegraph", com.webessay.customtypes.Includegraph.getAllIncludegraphs());    	
     }
+    
+	@InitBinder
+	protected void initBinder(HttpServletRequest request,
+	        ServletRequestDataBinder binder) throws ServletException {
+	    binder.registerCustomEditor(byte[].class,
+	            new ByteArrayMultipartFileEditor());
+	} 
+	
+
 }
