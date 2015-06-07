@@ -7,7 +7,6 @@ import com.webessay.controller.ApplicationConversionServiceFactoryBean;
 import com.webessay.model.Jobs;
 import com.webessay.model.JobsRepository;
 import com.webessay.model.Messages;
-import com.webessay.model.MessagesPK;
 import com.webessay.model.MessagesRepository;
 import com.webessay.model.Orders;
 import com.webessay.model.OrdersRepository;
@@ -19,7 +18,6 @@ import com.webessay.model.Uploadfile;
 import com.webessay.model.UploadfileRepository;
 import com.webessay.model.Userinfo;
 import com.webessay.model.UserinfoRepository;
-import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -77,14 +75,14 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Messages, String> ApplicationConversionServiceFactoryBean.getMessagesToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.webessay.model.Messages, java.lang.String>() {
             public String convert(Messages messages) {
-                return new StringBuilder().append(messages.getText()).append(' ').append(messages.getCreateDate()).append(' ').append(messages.getSendToUser()).append(' ').append(messages.getAuditText()).toString();
+                return new StringBuilder().append(messages.getFromUser()).append(' ').append(messages.getText()).append(' ').append(messages.getDate()).append(' ').append(messages.getToUser()).toString();
             }
         };
     }
     
-    public Converter<MessagesPK, Messages> ApplicationConversionServiceFactoryBean.getIdToMessagesConverter() {
-        return new org.springframework.core.convert.converter.Converter<com.webessay.model.MessagesPK, com.webessay.model.Messages>() {
-            public com.webessay.model.Messages convert(com.webessay.model.MessagesPK id) {
+    public Converter<Integer, Messages> ApplicationConversionServiceFactoryBean.getIdToMessagesConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Integer, com.webessay.model.Messages>() {
+            public com.webessay.model.Messages convert(java.lang.Integer id) {
                 return messagesRepository.findOne(id);
             }
         };
@@ -93,7 +91,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<String, Messages> ApplicationConversionServiceFactoryBean.getStringToMessagesConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.String, com.webessay.model.Messages>() {
             public com.webessay.model.Messages convert(String id) {
-                return getObject().convert(getObject().convert(id, MessagesPK.class), Messages.class);
+                return getObject().convert(getObject().convert(id, Integer.class), Messages.class);
             }
         };
     }
@@ -218,22 +216,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<String, MessagesPK> ApplicationConversionServiceFactoryBean.getJsonToMessagesPKConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.webessay.model.MessagesPK>() {
-            public MessagesPK convert(String encodedJson) {
-                return MessagesPK.fromJsonToMessagesPK(new String(Base64.decodeBase64(encodedJson)));
-            }
-        };
-    }
-    
-    public Converter<MessagesPK, String> ApplicationConversionServiceFactoryBean.getMessagesPKToJsonConverter() {
-        return new org.springframework.core.convert.converter.Converter<com.webessay.model.MessagesPK, java.lang.String>() {
-            public String convert(MessagesPK messagesPK) {
-                return Base64.encodeBase64URLSafeString(messagesPK.toJson().getBytes());
-            }
-        };
-    }
-    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getJobsToStringConverter());
         registry.addConverter(getIdToJobsConverter());
@@ -256,8 +238,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getUserinfoToStringConverter());
         registry.addConverter(getIdToUserinfoConverter());
         registry.addConverter(getStringToUserinfoConverter());
-        registry.addConverter(getJsonToMessagesPKConverter());
-        registry.addConverter(getMessagesPKToJsonConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

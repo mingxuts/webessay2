@@ -5,7 +5,6 @@ package com.webessay.controller;
 
 import com.webessay.controller.MessagesController;
 import com.webessay.model.Messages;
-import com.webessay.model.MessagesPK;
 import com.webessay.model.MessagesRepository;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +12,6 @@ import javax.validation.Valid;
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
-import org.springframework.core.convert.ConversionService;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,17 +23,9 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect MessagesController_Roo_Controller {
     
-    private ConversionService MessagesController.conversionService;
-    
     @Autowired
     MessagesRepository MessagesController.messagesRepository;
     
-    @Autowired
-    public MessagesController.new(ConversionService conversionService) {
-        super();
-        this.conversionService = conversionService;
-    }
-
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String MessagesController.create(@Valid Messages messages, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
@@ -44,7 +34,7 @@ privileged aspect MessagesController_Roo_Controller {
         }
         uiModel.asMap().clear();
         messagesRepository.save(messages);
-        return "redirect:/messageses/" + encodeUrlPathSegment(conversionService.convert(messages.getId(), String.class), httpServletRequest);
+        return "redirect:/messageses/" + encodeUrlPathSegment(messages.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", produces = "text/html")
@@ -54,10 +44,10 @@ privileged aspect MessagesController_Roo_Controller {
     }
     
     @RequestMapping(value = "/{id}", produces = "text/html")
-    public String MessagesController.show(@PathVariable("id") MessagesPK id, Model uiModel) {
+    public String MessagesController.show(@PathVariable("id") Integer id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("messages", messagesRepository.findOne(id));
-        uiModel.addAttribute("itemId", conversionService.convert(id, String.class));
+        uiModel.addAttribute("itemId", id);
         return "messageses/show";
     }
     
@@ -84,17 +74,17 @@ privileged aspect MessagesController_Roo_Controller {
         }
         uiModel.asMap().clear();
         messagesRepository.save(messages);
-        return "redirect:/messageses/" + encodeUrlPathSegment(conversionService.convert(messages.getId(), String.class), httpServletRequest);
+        return "redirect:/messageses/" + encodeUrlPathSegment(messages.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
-    public String MessagesController.updateForm(@PathVariable("id") MessagesPK id, Model uiModel) {
+    public String MessagesController.updateForm(@PathVariable("id") Integer id, Model uiModel) {
         populateEditForm(uiModel, messagesRepository.findOne(id));
         return "messageses/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
-    public String MessagesController.delete(@PathVariable("id") MessagesPK id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public String MessagesController.delete(@PathVariable("id") Integer id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         Messages messages = messagesRepository.findOne(id);
         messagesRepository.delete(messages);
         uiModel.asMap().clear();
@@ -104,7 +94,7 @@ privileged aspect MessagesController_Roo_Controller {
     }
     
     void MessagesController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("messages_createdate_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("messages_date_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));
     }
     
     void MessagesController.populateEditForm(Model uiModel, Messages messages) {

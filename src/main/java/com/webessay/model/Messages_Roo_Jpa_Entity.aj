@@ -4,9 +4,11 @@
 package com.webessay.model;
 
 import com.webessay.model.Messages;
-import com.webessay.model.MessagesPK;
-import javax.persistence.EmbeddedId;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 privileged aspect Messages_Roo_Jpa_Entity {
@@ -15,14 +17,16 @@ privileged aspect Messages_Roo_Jpa_Entity {
     
     declare @type: Messages: @Table(name = "messages");
     
-    @EmbeddedId
-    private MessagesPK Messages.id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
+    private Integer Messages.id;
     
-    public MessagesPK Messages.getId() {
+    public Integer Messages.getId() {
         return this.id;
     }
     
-    public void Messages.setId(MessagesPK id) {
+    public void Messages.setId(Integer id) {
         this.id = id;
     }
     

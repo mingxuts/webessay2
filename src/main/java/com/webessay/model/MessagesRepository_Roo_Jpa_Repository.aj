@@ -4,7 +4,6 @@
 package com.webessay.model;
 
 import com.webessay.model.Messages;
-import com.webessay.model.MessagesPK;
 import com.webessay.model.MessagesRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 privileged aspect MessagesRepository_Roo_Jpa_Repository {
     
-    declare parents: MessagesRepository extends JpaRepository<Messages, MessagesPK>;
+    declare parents: MessagesRepository extends JpaRepository<Messages, Integer>;
     
     declare parents: MessagesRepository extends JpaSpecificationExecutor<Messages>;
     

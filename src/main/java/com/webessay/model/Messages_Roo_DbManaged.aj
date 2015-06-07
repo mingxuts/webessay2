@@ -8,17 +8,23 @@ import java.util.Calendar;
 import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 privileged aspect Messages_Roo_DbManaged {
     
+    @Column(name = "FromUser")
+    @NotNull
+    private Integer Messages.fromUser;
+    
     @Column(name = "Text")
     private String Messages.text;
     
-    @Column(name = "CreateDate")
+    @Column(name = "Date")
+    @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "MM")
-    private Calendar Messages.createDate;
+    private Calendar Messages.date;
     
     @Column(name = "HasRead")
     private Boolean Messages.hasRead;
@@ -26,14 +32,23 @@ privileged aspect Messages_Roo_DbManaged {
     @Column(name = "HasAdudit")
     private Boolean Messages.hasAdudit;
     
-    @Column(name = "SendToUser")
-    private Integer Messages.sendToUser;
+    @Column(name = "ToUser")
+    @NotNull
+    private Integer Messages.toUser;
     
     @Column(name = "AuditText")
     private String Messages.auditText;
     
     @Column(name = "FileID")
     private Integer Messages.fileId;
+    
+    public Integer Messages.getFromUser() {
+        return fromUser;
+    }
+    
+    public void Messages.setFromUser(Integer fromUser) {
+        this.fromUser = fromUser;
+    }
     
     public String Messages.getText() {
         return text;
@@ -43,12 +58,12 @@ privileged aspect Messages_Roo_DbManaged {
         this.text = text;
     }
     
-    public Calendar Messages.getCreateDate() {
-        return createDate;
+    public Calendar Messages.getDate() {
+        return date;
     }
     
-    public void Messages.setCreateDate(Calendar createDate) {
-        this.createDate = createDate;
+    public void Messages.setDate(Calendar date) {
+        this.date = date;
     }
     
     public Boolean Messages.getHasRead() {
@@ -67,12 +82,12 @@ privileged aspect Messages_Roo_DbManaged {
         this.hasAdudit = hasAdudit;
     }
     
-    public Integer Messages.getSendToUser() {
-        return sendToUser;
+    public Integer Messages.getToUser() {
+        return toUser;
     }
     
-    public void Messages.setSendToUser(Integer sendToUser) {
-        this.sendToUser = sendToUser;
+    public void Messages.setToUser(Integer toUser) {
+        this.toUser = toUser;
     }
     
     public String Messages.getAuditText() {

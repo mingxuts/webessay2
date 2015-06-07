@@ -6,7 +6,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooJpaEntity(identifierType = MessagesPK.class, versionField = "", table = "messages")
 @RooDbManaged(automaticallyDelete = true)
+@RooJpaEntity(versionField = "", table = "messages")
 public class Messages {
 }

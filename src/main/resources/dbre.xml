@@ -55,20 +55,19 @@
     </table>
     <table name="messages">
         <column name="ID" primaryKey="true" required="true" scale="0" size="10" type="4,INT"/>
-        <column name="TaskId" primaryKey="true" required="true" scale="0" size="10" type="4,INT"/>
+        <column name="FromUser" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>
         <column name="Text" primaryKey="false" required="false" scale="0" size="65535" type="-1,TEXT"/>
-        <column name="CreateDate" primaryKey="false" required="false" scale="0" size="19" type="93,DATETIME"/>
+        <column name="Date" primaryKey="false" required="true" scale="0" size="19" type="93,TIMESTAMP"/>
         <column name="HasRead" primaryKey="false" required="false" scale="0" size="0" type="-7,BIT"/>
         <column name="HasAdudit" primaryKey="false" required="false" scale="0" size="0" type="-7,BIT"/>
-        <column name="SendToUser" primaryKey="false" required="false" scale="0" size="10" type="4,INT"/>
+        <column name="ToUser" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>
         <column name="AuditText" primaryKey="false" required="false" scale="0" size="65535" type="-1,TEXT"/>
         <column name="FileID" primaryKey="false" required="false" scale="0" size="10" type="4,INT"/>
         <unique name="PRIMARY">
             <unique-column name="ID"/>
-            <unique-column name="TaskId"/>
         </unique>
         <index name="FK_2uq8b13bjhyp8tavevmyr5t61">
-            <index-column name="TaskId"/>
+            <index-column name="FromUser"/>
         </index>
     </table>
     <table name="orders">
