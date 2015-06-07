@@ -36,6 +36,7 @@
             <menu:item id="i_controller__orderformindex_id" messageCode="global_generic" url="/orderform/index" z="A2QyONV4sW0qGk6iMlvTXbbsRfA="/>
             <menu:item id="i_controller__jobformindex_id" messageCode="global_generic" url="/jobform/index" z="ojf3xzMOjkdU88eix85Jmx1xSBw="/>
             <menu:item id="i_controller__selectorderindex_id" messageCode="global_generic" url="/selectorder/index" z="lhq57+0M8U8ltuz9QpYptXiuZ5o="/>
+            <menu:item id="i_controller__composemsgindex_id" messageCode="global_generic" url="/composemsg/index" z="eNHwNdanL+J2y42NyKxAqk2vo1c="/>
         </menu:category>
     </menu:menu>
 </div>
