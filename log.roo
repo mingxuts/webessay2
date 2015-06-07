@@ -25,3 +25,5 @@ web mvc controller --class ~.controller.SelectOrder
 // Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2015-06-07 12:03:27
 database reverse engineer --schema webessay --repository true --package ~.model
 // Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2015-06-07 12:08:45
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2015-06-07 12:30:25
+database reverse engineer --schema webessay --repository true --package ~.model

@@ -57,7 +57,7 @@
         <column name="ID" primaryKey="true" required="true" scale="0" size="10" type="4,INT"/>
         <column name="FromUser" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>
         <column name="Text" primaryKey="false" required="false" scale="0" size="65535" type="-1,TEXT"/>
-        <column name="Date" primaryKey="false" required="true" scale="0" size="19" type="93,TIMESTAMP"/>
+        <column name="Date" primaryKey="false" required="false" scale="0" size="19" type="93,TIMESTAMP"/>
         <column name="HasRead" primaryKey="false" required="false" scale="0" size="0" type="-7,BIT"/>
         <column name="HasAdudit" primaryKey="false" required="false" scale="0" size="0" type="-7,BIT"/>
         <column name="ToUser" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>

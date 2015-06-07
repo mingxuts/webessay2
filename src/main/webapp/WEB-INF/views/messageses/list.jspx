@@ -8,8 +8,8 @@
             <table:column id="c_com_webessay_model_Messages_hasRead" property="hasRead" z="x3XCNya56GSeNVRVtERsfKjYj+Q="/>
             <table:column id="c_com_webessay_model_Messages_hasAdudit" property="hasAdudit" z="Ow2diVBiXNQAIIXsCY3sUFVxDIw="/>
             <table:column id="c_com_webessay_model_Messages_fromUser" property="fromUser" z="pFq0uh/3wDxu6fFTpvNwkdJWK+A="/>
-            <table:column calendar="true" dateTimePattern="${messages_date_date_format}" id="c_com_webessay_model_Messages_date" property="date" z="shMQm/SpNuozhWg8i2YUUSQRS2g="/>
             <table:column id="c_com_webessay_model_Messages_toUser" property="toUser" z="sIvjOeLLAqZOtCHJJDyzIcCbUsg="/>
+            <table:column date="true" dateTimePattern="${messages_date_date_format}" id="c_com_webessay_model_Messages_date" property="date" z="9af3OS0yBpvAkhC5y8ET3wl9LYg="/>
         </table:table>
     </page:list>
 </div>

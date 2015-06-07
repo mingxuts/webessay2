@@ -4,12 +4,8 @@
 package com.webessay.model;
 
 import com.webessay.model.Messages;
-import java.util.Calendar;
 import javax.persistence.Column;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import org.springframework.format.annotation.DateTimeFormat;
 
 privileged aspect Messages_Roo_DbManaged {
     
@@ -19,12 +15,6 @@ privileged aspect Messages_Roo_DbManaged {
     
     @Column(name = "Text")
     private String Messages.text;
-    
-    @Column(name = "Date")
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "MM")
-    private Calendar Messages.date;
     
     @Column(name = "HasRead")
     private Boolean Messages.hasRead;
@@ -56,14 +46,6 @@ privileged aspect Messages_Roo_DbManaged {
     
     public void Messages.setText(String text) {
         this.text = text;
-    }
-    
-    public Calendar Messages.getDate() {
-        return date;
-    }
-    
-    public void Messages.setDate(Calendar date) {
-        this.date = date;
     }
     
     public Boolean Messages.getHasRead() {

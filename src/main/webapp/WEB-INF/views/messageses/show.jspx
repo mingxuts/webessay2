@@ -9,7 +9,7 @@
         <field:display field="auditText" id="s_com_webessay_model_Messages_auditText" object="${messages}" z="FDqz/eZeXsQmM4WfRAg2D7PBKrg="/>
         <field:display field="fileId" id="s_com_webessay_model_Messages_fileId" object="${messages}" z="06IHSuLGYNeeYD/9Jq2ZGsA82Pc="/>
         <field:display field="fromUser" id="s_com_webessay_model_Messages_fromUser" object="${messages}" z="rnxIrEfizzbYGbAZ40uNOtnbOUc="/>
-        <field:display calendar="true" dateTimePattern="${messages_date_date_format}" field="date" id="s_com_webessay_model_Messages_date" object="${messages}" z="dJDP74cHtlYIAeoEKcNNLbj8SXA="/>
         <field:display field="toUser" id="s_com_webessay_model_Messages_toUser" object="${messages}" z="TXQzqOgseYEqGL9YDL1ex/K5j7Y="/>
+        <field:display date="true" dateTimePattern="${messages_date_date_format}" field="date" id="s_com_webessay_model_Messages_date" object="${messages}" z="J6v1iUfUEF6IU9M/SNoNv6yj//w="/>
     </page:show>
 </div>

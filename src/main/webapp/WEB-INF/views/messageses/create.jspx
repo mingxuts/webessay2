@@ -9,8 +9,8 @@
         <field:input field="auditText" id="c_com_webessay_model_Messages_auditText" z="THQEBt9+wXcvS8MUYjTShmWFNDA="/>
         <field:input field="fileId" id="c_com_webessay_model_Messages_fileId" validationMessageCode="field_invalid_integer" z="LUvAluQT021WK+Lfjd9k5zTteAY="/>
         <field:input field="fromUser" id="c_com_webessay_model_Messages_fromUser" required="true" validationMessageCode="field_invalid_integer" z="eG17nN/Wcogp//S1CjQewa1Ty9w="/>
-        <field:datetime dateTimePattern="${messages_date_date_format}" field="date" id="c_com_webessay_model_Messages_date" required="true" z="GDStzGX6Eg7h1eCsuutrA9hLxjs="/>
         <field:input field="toUser" id="c_com_webessay_model_Messages_toUser" required="true" validationMessageCode="field_invalid_integer" z="q2So5uUtR3A9UxboScx5UU7c4Rs="/>
+        <field:datetime dateTimePattern="${messages_date_date_format}" field="date" id="c_com_webessay_model_Messages_date" z="O1TwJTI+oqxwd2G8p/MtKEVFUQ4="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_webessay_model_Messages" render="${not empty dependencies}" z="zbVSCt7FDf0rsqA/ugj1oCxWnTU="/>
 </div>

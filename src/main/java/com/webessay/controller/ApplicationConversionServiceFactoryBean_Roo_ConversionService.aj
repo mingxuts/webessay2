@@ -75,7 +75,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Messages, String> ApplicationConversionServiceFactoryBean.getMessagesToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.webessay.model.Messages, java.lang.String>() {
             public String convert(Messages messages) {
-                return new StringBuilder().append(messages.getFromUser()).append(' ').append(messages.getText()).append(' ').append(messages.getDate()).append(' ').append(messages.getToUser()).toString();
+                return new StringBuilder().append(messages.getDate()).append(' ').append(messages.getFromUser()).append(' ').append(messages.getText()).append(' ').append(messages.getToUser()).toString();
             }
         };
     }
