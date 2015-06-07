@@ -9,7 +9,7 @@ xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0" xmlns:field="urn:jsp
     <h3>
       Admin you are going to create a job for order , and customer is :
     </h3>
-    <form:create id="" path="./index" modelAttribute="jobs" label="Create new job" >
+    <form:create id="f" path="./index" modelAttribute="jobs" label="Create new job" >
         <field:select field="writerId" id="c_com_webessay_model_Jobs_writerId" itemValue="id" items="${userinfoes}" path="/userinfoes" />
     	<field:input field="fullPrice" id="c_com_webessay_model_Jobs_fullPrice" validationMessageCode="field_invalid_number" />
     	<field:input field="chargeWriter" id="c_com_webessay_model_Jobs_chargeWriter" validationMessageCode="field_invalid_number" />

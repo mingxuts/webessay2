@@ -68,7 +68,7 @@ public class Orderform {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    uiModel.asMap().clear();
+	    //uiModel.asMap().clear();
     	return page_endpoint;
     }
     
