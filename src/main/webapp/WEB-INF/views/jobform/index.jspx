@@ -16,6 +16,19 @@ xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0" xmlns:field="urn:jsp
     	<field:input field="note" id="c_com_webessay_model_Jobs_note"  />
     	<field:input field="amountDue" id="c_com_webessay_model_Jobs_amountDue" validationMessageCode="field_invalid_number"  />
     	<field:input field="commission" id="c_com_webessay_model_Jobs_commission" validationMessageCode="field_invalid_number" />
+    	<field:input field="reduced" id="c_com_webessay_model_Jobs_reduced" />  	
+    	<!-- All invisible fields -->
+    	<input type="hidden" name="orderId" id="c_com_webessay_model_Jobs_orderId" value="${jobs.orderId}"/>
+    	<input type="hidden" name="referencing" id="c_com_webessay_model_Jobs_referencing" value="${jobs.referencing}"/>
+    	<input type="hidden" name="sourcesCount" id="c_com_webessay_model_Jobs_sourcesCount" value="${jobs.sourcesCount}" />
+    	<input type="hidden" name="presentFormat" id="c_com_webessay_model_Jobs_presentFormat" value="${jobs.presentFormat}" />
+    	<input type="hidden" name="status" id="c_com_webessay_model_Jobs_status" value="${jobs.status}" />
+    	<input type="hidden" name="subjectId" id="c_com_webessay_model_Jobs_subjectId" value="${jobs.subjectId}" />
+    	<input type="hidden" name="wordCount" id="c_com_webessay_model_Jobs_wordCount" value="${jobs.wordCount}" />
+    	<input type="hidden" name="fileId" id="c_com_webessay_model_Jobs_fileId" value="${jobs.fileId}" />
+    	<input type="hidden" name="includeFigure" id="c_com_webessay_model_Jobs_includeFigure" value="${jobs.includeFigure}" />
+    	<input type="hidden" name="deadLine" id="c_com_webessay_model_Jobs_deadLine" value="${job_start_date}" />
+    	<input type="hidden" name="startDate" id="c_com_webessay_model_Jobs_startDate" value="${job_dead_line}" />           	
     </form:create>
   </util:panel>
 </div>
