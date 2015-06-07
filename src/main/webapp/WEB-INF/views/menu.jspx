@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0" 
+	xmlns:sec="http://www.springframework.org/security/tags">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
+	<!-- User Menu -->
+    <sec:authorize access="hasRole('ROLE_USER')">
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">        
+        <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
+            <menu:item id="i_controller__testuploadindex_id" messageCode="global_generic" url="/testupload/index" z="95e/vacQ1mvjW96UtSsQAHUGNII="/>
+            <menu:item id="i_controller__orderformindex_id" messageCode="global_generic" url="/orderform/index" z="A2QyONV4sW0qGk6iMlvTXbbsRfA="/>
+            <menu:item id="i_controller__jobformindex_id" messageCode="global_generic" url="/jobform/index" z="ojf3xzMOjkdU88eix85Jmx1xSBw="/>
+            <menu:item id="i_controller__selectorderindex_id" messageCode="global_generic" url="/selectorder/index" z="lhq57+0M8U8ltuz9QpYptXiuZ5o="/>
+            <menu:item id="i_controller__composemsgindex_id" messageCode="global_generic" url="/composemsg/index" z="eNHwNdanL+J2y42NyKxAqk2vo1c="/>
+            <menu:item id="i_controller__signupindex_id" messageCode="global_generic" url="/signup/index" z="G29JbCmXjdbb3PEygLrF79Au6Fs="/>
+        </menu:category>
+    </menu:menu>     
+    </sec:authorize>
+    
+    <!-- Writer Menu -->
+    <sec:authorize access="hasRole('ROLE_WRITER')">
+    </sec:authorize>
+    
+    <!-- Common Admin Menu -->
+    <sec:authorize access="hasAnyRole('ROLE_SUPER, ROLE_ADMIN')">
+    </sec:authorize>      
+    
+    
+    <!-- Super User Menu -->
+    <sec:authorize access="hasRole('ROLE_SUPER')">
     <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
         <menu:category id="c_messages" z="S2sFCt1r8M6Iz51dOS6EIEVui2g=">
             <menu:item id="i_messages_new" messageCode="global_menu_new" url="/messageses?form" z="+EOH1Djba2J6adwdoPAxSUeteUY="/>
@@ -39,5 +65,6 @@
             <menu:item id="i_controller__composemsgindex_id" messageCode="global_generic" url="/composemsg/index" z="eNHwNdanL+J2y42NyKxAqk2vo1c="/>
             <menu:item id="i_controller__signupindex_id" messageCode="global_generic" url="/signup/index" z="G29JbCmXjdbb3PEygLrF79Au6Fs="/>
         </menu:category>
-    </menu:menu>
+    </menu:menu>    
+    </sec:authorize>    
 </div>

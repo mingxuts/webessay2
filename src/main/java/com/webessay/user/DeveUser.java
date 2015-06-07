@@ -28,7 +28,7 @@ public class DeveUser {
         		true, true,
         		true, true,                 
         		AuthorityUtils
-				.commaSeparatedStringToAuthorityList("ROLE_ADMIN"), getUserID());
+				.commaSeparatedStringToAuthorityList("ROLE_SUPER"), getUserID());
 	}
 	
 	public Userinfo loadDeveloper(){
