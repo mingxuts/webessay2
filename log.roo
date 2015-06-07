@@ -32,3 +32,4 @@ database reverse engineer --schema webessay --repository true --package ~.model
 // Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2015-06-07 15:13:36
 // Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2015-06-07 15:13:45
 web mvc controll --class ~.controller.composemsg
+web mvc controller --class ~.controller.Signup
