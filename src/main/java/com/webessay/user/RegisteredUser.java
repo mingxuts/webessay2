@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.User;
 import com.webessay.config.Config;
 import com.webessay.model.Userinfo;
 import com.webessay.model.UserinfoRepository;
+import com.webessay.user.logic.Profile;
 
 public class RegisteredUser extends User {
 	
@@ -26,6 +27,7 @@ public class RegisteredUser extends User {
 	 */
 	private static final long serialVersionUID = 1L;
 	private final int userID;
+	private Profile profile;
 
 	public int getUserID() {
 		return userID;
@@ -47,5 +49,13 @@ public class RegisteredUser extends User {
 		} else {
 			return userinfoRepo.findOne(this.userID);
 		}
+	}
+
+	public Profile getProfile() {
+		return profile;
+	}
+
+	public void setProfile(Profile profile) {
+		this.profile = profile;
 	}
 }
