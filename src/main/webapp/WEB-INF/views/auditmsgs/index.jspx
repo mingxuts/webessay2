@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0"
+	xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" >
   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
   <jsp:output omit-xml-declaration="yes"/>
   <spring:message code="label_auditmsgs_index" htmlEscape="false" var="title"/>
   <util:panel id="title" title="${title}">
     <spring:message code="application_name" htmlEscape="false" var="app_name"/>
     <h3>
-      <spring:message arguments="${app_name}" code="welcome_titlepane"/>
+      View and Aduit Messages
     </h3>
+  			<table>
+  				<thead>
+  					<tr>
+  						<td>ID</td>
+  						<td>Time</td>
+  						<td>Body</td>
+  						<td>Attachment</td>
+  						<td>Action</td>
+  					</tr>					  					
+  				</thead>
+  				<tbody>
+  					<c:forEach var="item" items="${msglist}" >
+  						<fmt:formatDate value="${item.date}" type="BOTH" dateStyle="short" timeStyle="short" var="formattedDate"/>
+  						<tr>
+  						    <td>${item.id}</td>
+  							<td>${formattedDate}</td>
+  							<td>${item.auditText}</td>
+  							<td>
+  								<c:url var="messagefile" value="/testupload/files/${item.fileId}" />
+  								<a href="${messagefile}">Open Attachment</a>
+  							</td>
+  							<td>
+  								<c:url var="editmessage_url" value="/admindashboard/messages/${item.id}/edit" />
+  								<a href="${editmessage_url}">Edit</a>
+  							</td>
+  						</tr>
+  					</c:forEach>
+  				</tbody>
+  			</table>    
   </util:panel>
 </div>

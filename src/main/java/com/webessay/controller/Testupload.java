@@ -1,14 +1,18 @@
 package com.webessay.controller;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.security.Principal;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
+import org.springframework.web.servlet.mvc.multiaction.NoSuchRequestHandlingMethodException;
 
 import com.webessay.model.Uploadfile;
 import com.webessay.model.UploadfileRepository;
@@ -39,7 +44,7 @@ public class Testupload {
 	            new ByteArrayMultipartFileEditor());
 	}
     
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, value = "/index")
     public String postForm(ModelMap modelMap, @RequestParam("testupload") MultipartFile file) throws IOException{
     	System.out.println(file.getContentType());
     	System.out.println(file.getOriginalFilename());
@@ -51,14 +56,30 @@ public class Testupload {
     	repo.save(entity);
     	return page_endpoint;
     }
-    @RequestMapping(method = RequestMethod.POST, value = "{id}")
-    public void post(@PathVariable Long id, ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) {
-    }
 
-    @RequestMapping
+    @RequestMapping(value = "/index")
     public String index(Principal principal) {
         return page_endpoint;
     }
     
+    @RequestMapping(value = "/files/{id}", method = RequestMethod.GET)
+    public void showFile(@PathVariable("id") Integer id, HttpServletResponse response, Model model) throws NoSuchRequestHandlingMethodException {
+    	Uploadfile file = repo.findOne(id);
+    	if (file != null) {
+            byte[] image = file.getFile();
+            if (image != null) {
+                try {
+                    response.setContentType(file.getFileContentType());
+                    OutputStream out = response.getOutputStream();
+                    IOUtils.copy(new ByteArrayInputStream(image), out);
+                    out.flush();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }			
+		} else {
+			throw new NoSuchRequestHandlingMethodException ("File Not Found", Testupload.class);
+		}
+    }
     
 }
