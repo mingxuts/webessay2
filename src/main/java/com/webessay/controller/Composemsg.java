@@ -76,13 +76,15 @@ public class Composemsg {
 	}     
     
     private void upload(Messages msg, MultipartFile file) throws Exception{
-    	Uploadfile entity = new Uploadfile();
-    	entity.setFileContentType(file.getContentType());
-    	entity.setFileName(file.getOriginalFilename());
-    	entity.setFileSize(file.getSize());
-    	entity.setFile(file.getBytes());
-    	uploadrepo.save(entity);
-    	msg.setFileId(entity.getId());
+    	if (file.getSize() > 0) {
+    		Uploadfile entity = new Uploadfile();
+    		entity.setFileContentType(file.getContentType());
+    		entity.setFileName(file.getOriginalFilename());
+    		entity.setFileSize(file.getSize());
+    		entity.setFile(file.getBytes());
+    		uploadrepo.save(entity);
+    		msg.setFileId(entity.getId());
+		}    	
     }
     
 }
