@@ -1,11 +1,13 @@
 package com.webessay.controller;
 import java.io.IOException;
+import java.security.Principal;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.ServletRequestDataBinder;
@@ -54,7 +56,7 @@ public class Testupload {
     }
 
     @RequestMapping
-    public String index() {
+    public String index(Principal principal) {
         return page_endpoint;
     }
     

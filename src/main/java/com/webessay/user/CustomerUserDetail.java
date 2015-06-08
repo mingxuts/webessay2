@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import com.webessay.config.Config;
 import com.webessay.model.Userinfo;
 import com.webessay.model.UserinfoRepository;
+import com.webessay.user.logic.CustomerProfile;
 
 public class CustomerUserDetail implements UserDetailsService {
 	
@@ -81,7 +82,12 @@ public class CustomerUserDetail implements UserDetailsService {
                 accountNonLocked,
                 AuthorityUtils
 				.commaSeparatedStringToAuthorityList(userinfo.getGroupName()),
-				userinfo.getId());  
+				userinfo.getId()); 
+        System.out.println(user.getAuthorities().toArray()[0].toString());
+        if (user.getAuthorities().toArray()[0].toString().startsWith("ROLE_USER")){
+        	System.out.println("bingo");
+        	user.setProfile(new CustomerProfile(user));
+        }
         return user;		
 	}
 
