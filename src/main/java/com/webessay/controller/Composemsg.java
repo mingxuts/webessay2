@@ -1,5 +1,7 @@
 package com.webessay.controller;
 import java.io.IOException;
+import java.security.Principal;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -7,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -23,6 +26,8 @@ import com.webessay.model.Messages;
 import com.webessay.model.MessagesRepository;
 import com.webessay.model.Uploadfile;
 import com.webessay.model.UploadfileRepository;
+import com.webessay.user.RegisteredUser;
+import com.webessay.user.UserUtils;
 
 @RequestMapping("/composemsg/**")
 @Controller
@@ -39,9 +44,14 @@ public class Composemsg {
     }
 
     @RequestMapping
-    public String index(Model uiModel) {
+    public String index(Model uiModel, Principal principal) {
     	Messages msg = new Messages();
+    	msg.setFromUser(UserUtils.getUserId(principal));
     	uiModel.addAttribute("messages", msg);
+    	
+    	RegisteredUser user = (RegisteredUser)((Authentication) principal).getPrincipal();
+    	Map<Integer, String> contacts = user.getProfile().getContactsList();
+    	uiModel.addAttribute("contacts", contacts.entrySet());
         return "composemsg/index";
     }
     

@@ -11,6 +11,7 @@ import com.webessay.config.Config;
 import com.webessay.model.Userinfo;
 import com.webessay.model.UserinfoRepository;
 import com.webessay.user.logic.CustomerProfile;
+import com.webessay.user.logic.WriterProfile;
 
 public class CustomerUserDetail implements UserDetailsService {
 	
@@ -87,6 +88,9 @@ public class CustomerUserDetail implements UserDetailsService {
         if (user.getAuthorities().toArray()[0].toString().startsWith("ROLE_USER")){
         	System.out.println("bingo");
         	user.setProfile(new CustomerProfile(user));
+        }
+        if (user.getAuthorities().toArray()[0].toString().startsWith("ROLE_WRITER")){
+        	user.setProfile(new WriterProfile(user));
         }
         return user;		
 	}

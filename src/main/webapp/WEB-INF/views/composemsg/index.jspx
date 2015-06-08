@@ -10,8 +10,14 @@ xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0" xmlns:field="urn:jsp
       Compose Message
     </h3>
     <form:create id="f" path="./index" modelAttribute="messages" label="Compose Message" multipart="true">
-		<field:input field="fromUser" id="c_com_webessay_model_Messages_fromUser" required="true" validationMessageCode="field_invalid_integer" />
-        <field:input field="toUser" id="c_com_webessay_model_Messages_toUser" required="true" validationMessageCode="field_invalid_integer" />
+		<div>
+		<label for="fromUserShow">From:</label>
+		<input type="text" disabled="disabled" value="${messages.fromUser}" required="" name="fromUserShow" id="fromUserShow" style="width: 160px;"/>
+		</div>
+		<br /> 
+        <field:select field="toUser" id="c_com_webessay_model_Messages_toUser" path="/contacts"
+        	items="${contacts}" itemLabel="value" itemValue="key" 
+        required="true" />
         <a onclick="javascript:document.getElementById('upload').style.display='block';">Attach file</a>
         <div id="upload" style="display: none;">
           <LABEL for="tempfile">Select file : </LABEL>
@@ -19,6 +25,7 @@ xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0" xmlns:field="urn:jsp
         </div>  
         <br />
         <textarea name="text" id="c_com_webessay_model_Messages_text" rows="10" style="width: 95%;"><!-- required --></textarea>
+        <input type="hidden" value="${messages.fromUser}" name="fromUser" />
     </form:create>
   </util:panel>
 </div>
