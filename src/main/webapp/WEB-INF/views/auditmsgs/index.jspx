@@ -31,7 +31,7 @@
   								<a href="${messagefile}">Open Attachment</a>
   							</td>
   							<td>
-  								<c:url var="editmessage_url" value="/admindashboard/messages/${item.id}/edit" />
+  								<c:url var="editmessage_url" value="/auditmsgs/edit?id=${item.id}" />
   								<a href="${editmessage_url}">Edit</a>
   							</td>
   						</tr>

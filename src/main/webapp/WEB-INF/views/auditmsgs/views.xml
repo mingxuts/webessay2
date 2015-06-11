@@ -4,4 +4,7 @@
     <definition extends="default" name="auditmsgs/index">
         <put-attribute name="body" value="/WEB-INF/views/auditmsgs/index.jspx"/>
     </definition>
+    <definition extends="default" name="auditmsgs/edit">
+        <put-attribute name="body" value="/WEB-INF/views/auditmsgs/edit.jspx"/>
+    </definition>    
 </tiles-definitions>
