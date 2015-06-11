@@ -39,3 +39,6 @@ web mvc controller --class ~.controller.Signup
 // Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2015-06-08 14:48:38
 web mvc controller --class ~.controller.auditmsgs
 // Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2015-06-08 14:50:20
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2015-06-11 18:15:30
+web mvc controller --class ~.controller.Chatroom
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2015-06-11 18:16:20

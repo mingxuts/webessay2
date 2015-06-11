@@ -39,6 +39,7 @@
             <menu:item id="i_controller__composemsgindex_id" messageCode="global_generic" url="/composemsg/index" z="eNHwNdanL+J2y42NyKxAqk2vo1c="/>
             <menu:item id="i_controller__signupindex_id" messageCode="global_generic" url="/signup/index" z="G29JbCmXjdbb3PEygLrF79Au6Fs="/>
             <menu:item id="i_controller__auditmsgsindex_id" messageCode="global_generic" url="/auditmsgs/index" z="MzlIjlEjjs5EO91YuInLy2vNqac="/>
+            <menu:item id="i_controller__chatroomindex_id" messageCode="global_generic" url="/chatroom/index" z="C3Hv92xdLg/vq+Y30hV/7xyEaFc="/>
         </menu:category>
     </menu:menu>
 </div>
