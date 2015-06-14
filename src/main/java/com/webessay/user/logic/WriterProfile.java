@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import com.webessay.model.Jobs;
 import com.webessay.model.JobsRepository;
 import com.webessay.model.Messages;
+import com.webessay.model.MessagesRepository;
 import com.webessay.model.Userinfo;
 import com.webessay.user.RegisteredUser;
 
@@ -19,6 +20,7 @@ public class WriterProfile implements Profile {
 	private RegisteredUser writer;
 	
 	public static JobsRepository jobsrepo;
+	public static MessagesRepository messagesRepo;
 	
 	public WriterProfile(){}
 	
@@ -32,6 +34,10 @@ public class WriterProfile implements Profile {
 		WriterProfile.jobsrepo = repo;
 	}
 	
+	@Autowired
+	public void setMessage(MessagesRepository repo){
+		WriterProfile.messagesRepo = repo;
+	}
 	
 	@Override
 	public String loadDetail() {
@@ -46,9 +52,12 @@ public class WriterProfile implements Profile {
 	}
 
 	@Override
-	public List<Messages> getCanReadMessages() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Messages> getCanReadMessages(Boolean hasRead) {
+		if (hasRead){
+			return messagesRepo.findReadMessages(writer.getUserID());
+		} else {
+			return messagesRepo.findUnreadMessages(writer.getUserID());
+		}
 	}
 
 

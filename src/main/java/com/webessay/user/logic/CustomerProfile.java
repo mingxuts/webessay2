@@ -1,5 +1,6 @@
 package com.webessay.user.logic;
 
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,8 +11,10 @@ import org.springframework.stereotype.Component;
 import com.webessay.model.Jobs;
 import com.webessay.model.JobsRepository;
 import com.webessay.model.Messages;
+import com.webessay.model.MessagesRepository;
 import com.webessay.model.Userinfo;
 import com.webessay.user.RegisteredUser;
+import com.webessay.user.UserUtils;
 
 @Component
 public class CustomerProfile implements Profile {
@@ -25,10 +28,16 @@ public class CustomerProfile implements Profile {
 	}
 	
 	public static JobsRepository jobsrepo;
+	public static MessagesRepository messagesRepo;
 	
 	@Autowired
 	public void setJob(JobsRepository repo){
 		CustomerProfile.jobsrepo = repo;
+	}
+	
+	@Autowired
+	public void setMessage(MessagesRepository repo){
+		CustomerProfile.messagesRepo = repo;
 	}
 
 	@Override
@@ -44,9 +53,12 @@ public class CustomerProfile implements Profile {
 	}
 
 	@Override
-	public List<Messages> getCanReadMessages() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Messages> getCanReadMessages(Boolean hasRead) {
+		if (hasRead){
+			return messagesRepo.findReadMessages(this.customer.getUserID());
+		} else {
+			return messagesRepo.findUnreadMessages(this.customer.getUserID());
+		}
 	}
 
 	@Override

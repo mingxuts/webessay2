@@ -10,6 +10,6 @@ public interface Profile {
 	
 	String loadDetail();
 	List<Jobs> getProcessingJobs();
-	List<Messages> getCanReadMessages();
 	Map<Integer, String> getContactsList();
+	List<Messages> getCanReadMessages(Boolean hasRead);
 }
